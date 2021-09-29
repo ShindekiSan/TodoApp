@@ -1,0 +1,179 @@
+#root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0b1729;
+}
+
+.main-block {
+    margin-top: 150px;
+}
+
+.main-block__info {
+    text-align: center;
+    color: #ffffff;
+}
+
+.tasks {
+    text-align: center;
+}
+
+.last-todo {
+    color: #ffffff;
+}
+
+.task-form {
+    margin-left: 510px;
+
+    display: flex;
+
+    width: 500px;
+}
+
+.task-input {
+    width: 385px;
+    height: 40px;
+
+    padding-left: 15px;
+
+    border: 3px solid transparent;
+    border-image: linear-gradient(270deg, rgba(121,9,102,1) 0%, rgba(28,0,131,1) 100%);;
+    border-image-slice: 1;
+    color: #ffffff;
+    background-color: #0b1729;
+}
+
+.task-input:focus {
+    outline: none;
+
+    box-shadow: 0px 0px 10px #3d8bff;
+}
+
+.task-input__add-button {
+    width: 100px;
+    height: 46.5px;
+
+    background: linear-gradient(90deg, rgba(121,9,102,1) 0%, rgba(28,0,131,1) 100%);
+    color: #ffffff;
+    border: none;
+}
+
+.task-input__add-button:hover {
+    box-shadow: 0px 0px 10px #3d8bff;
+    background-color: #0b1729;
+
+    color: #3d8bff;
+    text-shadow: 0px 0px 5px #3d8bff;
+}
+
+.task-input__add-button:active {
+    color: #22539c;
+    text-shadow: 0px 0px 5px #22539c;
+}
+
+.update {
+    margin-top: 40px;
+}
+
+.todo {
+    width: 500px;
+    height: 60px;
+    background: linear-gradient(90deg, rgba(255,206,91,1) 0%, rgba(255,123,0,1) 100%);
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    margin-top: 40px;
+    margin-left: 510px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo:nth-child(4n+1) {
+    background: linear-gradient(90deg, rgba(68,52,251,1) 0%, rgba(35,0,99,1) 100%);
+}
+
+.todo:nth-child(4n+2) {
+    background: linear-gradient(90deg, rgba(255,102,241,1) 0%, rgba(149,0,118,1) 100%);
+}
+
+.todo:nth-child(4n+3) {
+    background: linear-gradient(90deg, rgba(53,243,34,1) 0%, rgba(19,99,0,1) 100%);
+}
+
+.complete {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.todo-text {
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.todo-buttons {
+    padding-right: 15px;
+    width: 100px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo__delete-button {
+    width: 24px;
+    height: 24px;
+}
+
+.todo__delete-button:hover {
+    color: #ff0019;
+}
+
+.todo__delete-button:active {
+    opacity: 0.6;
+}
+
+.todo__edit-button {
+    width: 24px;
+    height: 24px;
+}
+
+.todo__edit-button:hover {
+    color: #0b1729;
+}
+
+.todo__edit-button:active {
+    opacity: 0.6;
+}
+
+.todo__complete-button {
+    width: 24px;
+    height: 24px;
+}
+
+.todo__complete-button:hover {
+    color: #00ff4c;
+}
+
+.todo__complete-button:active {
+    opacity: 0.6;
+}
+
+.todo__uncomplete-button {
+    width: 24px;
+    height: 24px;
+}
+
+.todo__uncomplete-button:hover {
+    color: #ffcc00;
+}
+
+.todo__uncomplete-button:active {
+    opacity: 0.6;
+}
+
+.disable {
+    pointer-events: none;
+}
