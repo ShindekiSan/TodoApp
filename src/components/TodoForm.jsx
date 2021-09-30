@@ -38,6 +38,7 @@ function TodoForm(props) {
                             onChange={handleChange}
                             name='text'
                             className='task-input update'
+                            maxLength='30'
                         />
                         <button className='task-input__add-button update'>
                             Update
@@ -51,6 +52,7 @@ function TodoForm(props) {
                             value={input} 
                             className='task-input' 
                             onChange={handleChange}
+                            maxLength='30'
                         />
                         <button className='task-input__add-button'>
                             Add to list

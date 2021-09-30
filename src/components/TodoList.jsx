@@ -44,7 +44,7 @@ function TodoList() {
     return (
         <div className='todo-list'>
             <TodoForm onSubmit={addTodo} />
-            {todos.slice(0).reverse().map((todo, index) =>
+            {todos.slice(0).reverse().map(todo =>
                 <Todo 
                     todo={todo} 
                     key={todo.id} 
