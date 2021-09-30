@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import TodoFilters from "./TodoFilters";
 
 function TodoList() {
     const [todos, setTodos] = useState([])
@@ -44,6 +45,7 @@ function TodoList() {
     return (
         <div className='todo-list'>
             <TodoForm onSubmit={addTodo} />
+            <TodoFilters todos={todos} setTodos={setTodos} />
             {todos.slice(0).reverse().map(todo =>
                 <Todo 
                     todo={todo} 

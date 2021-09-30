@@ -79,7 +79,7 @@ body {
 .todo {
     width: 500px;
     height: 60px;
-    background: linear-gradient(90deg, rgba(255,206,91,1) 0%, rgba(255,123,0,1) 100%);
+    background: linear-gradient(90deg, rgba(68,52,251,1) 0%, rgba(35,0,99,1) 100%);
     border-radius: 10px;
 
     color: #ffffff;
@@ -92,7 +92,7 @@ body {
     align-items: center;
 }
 
-.todo:nth-child(4n+1) {
+/* .todo:nth-child(4n+1) {
     background: linear-gradient(90deg, rgba(68,52,251,1) 0%, rgba(35,0,99,1) 100%);
 }
 
@@ -102,11 +102,15 @@ body {
 
 .todo:nth-child(4n+3) {
     background: linear-gradient(90deg, rgba(53,243,34,1) 0%, rgba(19,99,0,1) 100%);
-}
+} */
 
 .complete {
-    opacity: 0.4;
+    background: linear-gradient(90deg, rgba(68,52,251,0.4) 0%, rgba(35,0,99,0.4) 100%);
     text-decoration: line-through;
+}
+
+.todo-text--complete {
+    opacity: 0.4
 }
 
 .todo-text {
@@ -176,4 +180,21 @@ body {
 
 .disable {
     pointer-events: none;
+    opacity: 0.4;
+}
+
+.filter-button {
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+}
+
+.filters {
+    list-style: none;
+    color: #ffffff;
+}
+
+.filters li {
+    display: flex;
+    align-items: center;
 }

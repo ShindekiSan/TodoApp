@@ -25,7 +25,7 @@ function Todo(props) {
 
     return (
         <div className={props.todo.isComplete ? 'todo complete' : 'todo'}>
-            <span className='todo-text'>{props.todo.text}</span>
+            <span className={props.todo.isComplete ? 'todo-text todo-text--complete' : 'todo-text'}>{props.todo.text}</span>
             <div className='todo-buttons'>
                 <AiOutlineCloseCircle 
                     className='todo__delete-button'
@@ -35,9 +35,9 @@ function Todo(props) {
                     className={props.todo.isComplete ? 'todo__edit-button disable' : 'todo__edit-button'} 
                     onClick={() => setEdit({id:props.todo.id, value: props.todo.text})}
                 />
-                {props.todo.isComplete ? 
-                    <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/> : 
-                    <MdDone className='todo__complete-button' onClick={props.changeTodoState}/>
+                {props.todo.isComplete
+                    ? <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/>
+                    : <MdDone className='todo__complete-button' onClick={props.changeTodoState}/>
                 }
             </div>
         </div>
