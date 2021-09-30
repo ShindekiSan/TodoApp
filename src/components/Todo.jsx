@@ -34,7 +34,7 @@ function Todo(props) {
                     className={props.todo.isComplete ? 'todo__edit-button disable' : 'todo__edit-button'} onClick={() => setEdit({id:props.todo.id, value: props.todo.text})}
                 />
                 {props.todo.isComplete ? 
-                <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/> : <MdDone className='todo__complete-button' onClick={props.onChangeStateClick}/>}
+                <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/> : <MdDone className='todo__complete-button' onClick={props.changeTodoState}/>}
             </div>
         </div>
     )
