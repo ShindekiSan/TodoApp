@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function TodoForm(props) {
     const [input, setInput] = useState('');
-    const [todoId, setTodoId] = useState(0);
+    const [todoId, setTodoId] = useState(1);
     
     const newTodoId = () => {
         setTodoId(todoId + 1);
@@ -39,7 +39,7 @@ function TodoForm(props) {
                             name='text'
                             className='task-input update'
                         />
-                        <button onClick={handleSubmit} className='task-input__add-button update'>
+                        <button className='task-input__add-button update'>
                             Update
                         </button>
                     </>

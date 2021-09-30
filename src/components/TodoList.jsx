@@ -12,6 +12,7 @@ function TodoList() {
 
         const newTodos = [todo, ...todos]
 
+        console.log(todo, ...todos)
         setTodos(newTodos);
     }
 
@@ -47,7 +48,7 @@ function TodoList() {
             {todos.slice(0).reverse().map((todo, index) =>
                 <Todo 
                     todo={todo} 
-                    key={index} 
+                    key={todo.id} 
                     deleteTodo={() => deleteTodo(todo.id)} 
                     changeTodoState={() => changeTodoState(todo.id)}
                     updateTodo = {updateTodo}

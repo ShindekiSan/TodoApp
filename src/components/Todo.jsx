@@ -11,6 +11,7 @@ function Todo(props) {
     })
 
     const submitUpdate = value => {
+        value.id = edit.id
         props.updateTodo(edit.id, value)
         setEdit({
             id: null,
@@ -31,10 +32,13 @@ function Todo(props) {
                     onClick={props.deleteTodo}
                 />
                 <AiOutlineEdit 
-                    className={props.todo.isComplete ? 'todo__edit-button disable' : 'todo__edit-button'} onClick={() => setEdit({id:props.todo.id, value: props.todo.text})}
+                    className={props.todo.isComplete ? 'todo__edit-button disable' : 'todo__edit-button'} 
+                    onClick={() => setEdit({id:props.todo.id, value: props.todo.text})}
                 />
                 {props.todo.isComplete ? 
-                <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/> : <MdDone className='todo__complete-button' onClick={props.changeTodoState}/>}
+                    <BiUndo className='todo__uncomplete-button' onClick={props.changeTodoState}/> : 
+                    <MdDone className='todo__complete-button' onClick={props.changeTodoState}/>
+                }
             </div>
         </div>
     )
