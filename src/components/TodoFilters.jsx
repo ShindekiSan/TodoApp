@@ -1,43 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import { BiListUl } from 'react-icons/bi'
 import { CgPlayListCheck, CgPlayListRemove } from 'react-icons/cg'
+import PropTypes from 'prop-types'
 
-function TodoFilters({ todos, setTodos }) {
-    const [doneCount, setDoneCount] = useState(0);
-    const [undoneCount, setUndoneCount] = useState(0);
-    const [allCount, setAllCount] = useState(0);
+const TodoFilters = ({ todos, setCurrentTodos }) => {
+    const [doneTodosCount, setDoneTodosCount] = useState(0);
+    const [undoneTodosCount, setUndoneTodosCount] = useState(0);
+    const [allTodosCount, setAllTodosCount] = useState(0);
+    const [todosCopy, setTodosCopy] = useState([]);
 
-    const countTodosStates = () => {
-        todos.forEach(todo => {
-            todo.isComplete ? setDoneCount(doneCount+1) : setUndoneCount(undoneCount+1)
-        })
+    const filterDone = () => { 
+        setCurrentTodos(todosCopy.filter(todo => todo.isComplete))
     }
 
-    const countAllTodos = () => {
-        setAllCount(todos.length)
+    const filterUndone = () => {
+        setCurrentTodos(todosCopy.filter(todo => !todo.isComplete))
     }
 
-    // useEffect(() => {   
-    //     countTodosStates();
-    //     countAllTodos();
-    // }, [doneCount, undoneCount, allCount])
+    const filterAll = () => {
+        setCurrentTodos(todos);
+    }
 
-    return ( 
+    useEffect(() => {   
+        setDoneTodosCount(todos.filter(todo => todo.isComplete).length);
+        setUndoneTodosCount(todos.filter(todo => !todo.isComplete).length);
+        setAllTodosCount(todos.length);
+        setTodosCopy(todos)
+    }, [todos])
+
+    return (   
         <ul className='filters'>
-            <li>
-                <CgPlayListCheck className='filter-button filter-done' />
-                <span className='counter counter-done'>{doneCount}</span>
+            <li className='filter-button'>
+                <CgPlayListCheck className='filter-icon filter-done' onClick={filterDone} />
+                <span className='counter counter-done'>{doneTodosCount}</span>
             </li>
-            <li>
-                <CgPlayListRemove className='filter-button filter-undone' />
-                <span className='counter counter-undone'>{undoneCount}</span>
+            <li className='filter-button'>
+                <CgPlayListRemove className='filter-icon filter-undone' onClick={filterUndone} />
+                <span className='counter counter-undone'>{undoneTodosCount}</span>
             </li>
-            <li>
-                <BiListUl className='filter-button filter-all' />
-                <span className='counter counter-all' >{allCount}</span>
+            <li className='filter-button'>
+                <BiListUl className='filter-icon filter-all' onClick={filterAll} />
+                <span className='counter counter-all' >{allTodosCount}</span>
             </li>
         </ul>
     );
+}
+
+TodoFilters.propTypes ={
+    todos: PropTypes.array, 
+    setCurrentTodos: PropTypes.func, 
 }
 
 export default TodoFilters;

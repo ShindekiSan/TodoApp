@@ -183,7 +183,7 @@ body {
     opacity: 0.4;
 }
 
-.filter-button {
+.filter-icon {
     color: #ffffff;
     width: 30px;
     height: 30px;
@@ -199,7 +199,7 @@ body {
     margin-left: 470px;
 }
 
-.filters li {
+.filter-button {
     display: flex;
     align-items: center;
 }
@@ -216,6 +216,6 @@ body {
     color: #4434fb;
 }
 
-.filter-button:active {
+.filter-icon:active {
     opacity: 0.6;
 }
