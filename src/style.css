@@ -192,9 +192,30 @@ body {
 .filters {
     list-style: none;
     color: #ffffff;
+
+    display: flex;
+    justify-content: space-around;
+    width: 510px;
+    margin-left: 470px;
 }
 
 .filters li {
     display: flex;
     align-items: center;
+}
+
+.filter-undone:hover {
+    color: #ff0019;
+}
+
+.filter-done:hover {
+    color: #00ff4c;
+}
+
+.filter-all:hover {
+    color: #4434fb;
+}
+
+.filter-button:active {
+    opacity: 0.6;
 }
