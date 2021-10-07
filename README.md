@@ -9,4 +9,4 @@ This simple app is helpful in writing quick notes and checking them.
   - done todos
   - undone todos
   - all todos
-## TECHNOLOGIES USED: Javascript (ES6), React.
+## TECHNOLOGIES: Javascript (ES6), React.
